@@ -1,7 +1,7 @@
-import { FILTRAR, GET_ALL_POKEMON, LOADING, ORDENAR } from "../Actions/index";
+import { FILTRAR, GET_ALL_POKEMON, LOADING, ORDENAR, SHOW_CARD, GET_ONE_POKEMON} from "../Actions/index";
 
 const initialState = {
-    loading: true,
+    loading: false,
     notFound: false,
     auxiliar: [],
     allPokemon: [],
@@ -16,6 +16,26 @@ export default function reducer (state=initialState, action){
                 loading: !state.loading,
                 auxiliar: action.payload,
                 allPokemon: action.payload,
+            }
+
+        case GET_ONE_POKEMON:
+
+            if(action.payload.hasOwnProperty('name')){
+                const newPokemon = [action.payload]
+                return {
+                    ...state,
+                    loading: !state.loading,
+                    notFound: false,
+                    allPokemon: newPokemon,
+                    auxiliar: [...newPokemon, ...state.auxiliar]
+                }
+            } else {
+                console.log("desepues de la consulta en la API local")
+                return{
+                    ...state,
+                    loading: !state.loading,
+                    notFound: true,
+                }
             }
 
         case ORDENAR:
@@ -355,6 +375,11 @@ export default function reducer (state=initialState, action){
             return {
                 ...state,
                 loading: !state.loading,
+            }
+        case SHOW_CARD:
+            return {
+                ...state,
+                allPokemon: action.payload,
             }
     
         default:

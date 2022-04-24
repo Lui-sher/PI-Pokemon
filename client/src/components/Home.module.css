@@ -4,12 +4,27 @@
     align-items: center;
 }
 
+.loading {
+    display: flex;
+    max-width: 387px;
+    flex-direction: column;
+}
+
 .loading img{
+    display: flex;
+    margin-top: 100px;
     border-radius: 320px;
-    width: 350px;
+    width: 100%;
 }
 
 .loading h1 {
     position: relative;
     top: -80px
+}
+
+.notFound img{
+    width: 100%;
+    display: flex;
+    margin-top: 85px;
+    border-radius: 155px;
 }

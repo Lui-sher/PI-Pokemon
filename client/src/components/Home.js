@@ -1,10 +1,10 @@
 import React from "react";
-//import Card from "./Card";
 import Pages from "./Pages";
-import image from '../Images/LoadingPokemon.gif';
+import loadingImage from '../Images/LoadingPokemon.gif';
+import notFoundImage from '../Images/pikachuTriste.gif';
 import s from "./Home.module.css";
 import { connect } from 'react-redux';
-import { loading, requestBd } from '../Redux/Actions/index.js';
+import { requestBd } from '../Redux/Actions/index.js';
 
 let x = true;
 
@@ -13,30 +13,26 @@ function Home (prop){
         prop.requestBd();
         x = false;
     }
-
     return(
         <div className={s.contenedor}>
-            {/* <div>
-                <Card 
-                image={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/25.png"}
-                name={'PIKACHU'}
-                pokedexNumber={25}
-                pokemonTypes={["electric", "normal"]}
-                />
-            </div>
-            <br/> */}
-            <button onClick={prop.cambiarLoading}>modificar estado loading</button>
             {
-                prop.loading ?
-                <div>
-                    {/* <Cards allPokemon={prop.allPokemon}/> */}
-                    <Pages/>
-                </div>
-                 :
-                 <div className={s.loading}>
-                     <img src={image} alt='Loading'/>
-                     <h1>Loading...</h1>
-                 </div>
+            prop.loading 
+            ?
+            <div className={s.loading}>
+                <img src={loadingImage} alt='Loading'/>
+                <h1>Loading...</h1>
+            </div>
+            :
+            prop.notFound
+            ?
+            <div className={s.notFound}>
+                <img src={notFoundImage} alt='Error 404'/>
+                <h1>404 No se hallaron resultados :(</h1>
+            </div>
+            :
+            <div>
+                <Pages/>
+            </div>
             }
         </div>
     )
@@ -46,7 +42,7 @@ function Home (prop){
 function mapStateToProps (state){
     return {
         loading: state.loading,
-        allPokemon: state.allPokemon
+        notFound: state.notFound
     }
 };
 
@@ -56,10 +52,6 @@ function mapDispatchToProps (dispatch){
         requestBd: function(){
             dispatch(requestBd())
         },
-        cambiarLoading: function(){
-            dispatch(loading())
-        }
-
     }
 }
 

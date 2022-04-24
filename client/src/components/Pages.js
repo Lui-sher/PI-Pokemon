@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { connect } from 'react-redux';
 import Cards from "./Cards";
+import s from './Pages.module.css';
 
 function Pages (prop){
 
@@ -14,7 +15,7 @@ function Pages (prop){
     const pagina = prop.allPokemon.slice(paginado.contador, paginado.contador+12)
 
     return(
-        <div>
+        <div className={s.contenedor}>
             <button onClick ={() => 
                 paginado.pagina > 0 ? 
                 SetPaginado({...paginado, contador: paginado.contador-12, pagina:paginado.pagina-1}):
