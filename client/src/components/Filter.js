@@ -36,7 +36,9 @@ function Filter ({filtrar}){
                     <option>Tipo Siniestro</option>
                     <option>Tipo Hada</option>
                 </select>
-                <button>GO</button>
+                
+                    <button>GO</button>
+                
             </form>
         </div>
     )

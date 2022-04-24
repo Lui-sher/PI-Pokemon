@@ -22,7 +22,9 @@ function OrdenarCards ({ordenar}){
                     <option>Nombre A → Z</option>
                     <option>Nombre Z → A</option>
                 </select>
-                <button>GO</button>
+                
+                    <button>GO</button>
+                
             </form>
         </div>
     );

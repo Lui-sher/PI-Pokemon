@@ -49,7 +49,10 @@ function SearchBar({onSearch, auxiliar, showCard}) {
         value={pokemonName}
         onChange={e => setPokemonName(e.target.value)}
       />
-      <input type="submit" value="Search" />
+      
+        <input type="submit" value="Search" />
+     
+
     </form>
   );
 }

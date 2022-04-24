@@ -1,0 +1,8 @@
+.contenedor {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor img {
+    max-width: 500px;
+}
