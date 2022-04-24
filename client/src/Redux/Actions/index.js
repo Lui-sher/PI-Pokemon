@@ -12,7 +12,6 @@ export function getAllPokemon (data){
 }
 
 export function ordenar (tipo){
-
     return {
         type: ORDENAR,
         payload: tipo,
@@ -20,10 +19,6 @@ export function ordenar (tipo){
 }
 
 export function filtrar (tipo){
-    // const obj = {}
-    // tipo === "Fuerza ↑" ? 
-    // obj.tipo = "fuerza" 
-    // obj.modo = "ascendente" :
     return {
         type: FILTRAR,
         payload: tipo

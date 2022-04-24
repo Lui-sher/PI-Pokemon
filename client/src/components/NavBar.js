@@ -1,6 +1,7 @@
 import React from "react";
 import OrdenarCards from "./OrdenarCards";
 import SearchBar from "./SearchBar";
+import Filter from "./Filter";
 import s from "./NavBar.module.css";
 
 export default function NavBar (){
@@ -9,6 +10,7 @@ export default function NavBar (){
         <div className={s.contenedor}>
             <SearchBar/>
             <OrdenarCards/>
+            <Filter/>
         </div>
     );
 }

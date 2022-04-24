@@ -1,7 +1,9 @@
-import { GET_ALL_POKEMON, LOADING, ORDENAR } from "../Actions/index";
+import { FILTRAR, GET_ALL_POKEMON, LOADING, ORDENAR } from "../Actions/index";
 
 const initialState = {
     loading: true,
+    notFound: false,
+    auxiliar: [],
     allPokemon: [],
 }
 
@@ -12,7 +14,8 @@ export default function reducer (state=initialState, action){
             return {
                 ...state,
                 loading: !state.loading,
-                allPokemon: action.payload
+                auxiliar: action.payload,
+                allPokemon: action.payload,
             }
 
         case ORDENAR:
@@ -62,11 +65,9 @@ export default function reducer (state=initialState, action){
             }
 
             function SortArray(x, y){
-                console.log("me activé con Nombre AZ o ZA")
                 if(action.payload === "Nombre A → Z") return x.name.localeCompare(y.name);
                 else return y.name.localeCompare(x.name);
             }
-            // console.log('reducer/34 ',action.payload)
             let value = [];
 
             if(action.payload === "Nombre A → Z" || action.payload === "Nombre Z → A"){
@@ -82,6 +83,273 @@ export default function reducer (state=initialState, action){
                     allPokemon: value,
                 }
             }
+
+        case FILTRAR:
+            if(action.payload === "Todos"){
+                return {
+                    ...state,
+                    notFound: false,
+                    allPokemon: state.auxiliar,
+                }
+            }
+            if(action.payload === "Existentes"){
+                return {
+                    ...state,
+                    notFound: false,
+                    allPokemon: state.auxiliar.filter(e => e.pokedexNumber < 899)
+
+                }
+            }
+            if(action.payload === "Creados"){
+                let resultado = state.auxiliar.filter(e => e.pokedexNumber > 899);
+                if(resultado.length === 0){
+                    return {
+                        ...state,
+                        notFound: true,
+                    }
+                }else {
+                    return {
+                    ...state,
+                    notFound: false,
+                    allPokemon: resultado,
+                    }
+                }
+            }
+            if(action.payload === "Tipo Normal"){
+                let resultado = state.auxiliar.filter(e => e.pokemonTypes.find(e => e === "normal"))
+                if(resultado.length === 0){
+                    return{
+                        ...state,
+                        notFound: true,
+                    }
+                } else return {
+                    ...state,
+                    notFound: false,
+                    allPokemon: resultado,
+                }
+            }
+            if(action.payload === "Tipo Lucha"){
+                let resultado = state.auxiliar.filter(e => e.pokemonTypes.find(e => e === "fighting"))
+                if(resultado.length === 0){
+                    return{
+                        ...state,
+                        notFound: true,
+                    }
+                } else return {
+                    ...state,
+                    notFound: false,
+                    allPokemon: resultado,
+                }
+            }
+            if(action.payload === "Tipo Volador"){
+                let resultado = state.auxiliar.filter(e => e.pokemonTypes.find(e => e === "flying"))
+                if(resultado.length === 0){
+                    return{
+                        ...state,
+                        notFound: true,
+                    }
+                } else return {
+                    ...state,
+                    notFound: false,
+                    allPokemon: resultado,
+                }
+            }
+            if(action.payload === "Tipo Veneno"){
+                let resultado = state.auxiliar.filter(e => e.pokemonTypes.find(e => e === "poison"))
+                if(resultado.length === 0){
+                    return{
+                        ...state,
+                        notFound: true,
+                    }
+                } else return {
+                    ...state,
+                    notFound: false,
+                    allPokemon: resultado,
+                }
+            }
+            if(action.payload === "Tipo Tierra"){
+                let resultado = state.auxiliar.filter(e => e.pokemonTypes.find(e => e === "ground"))
+                if(resultado.length === 0){
+                    return{
+                        ...state,
+                        notFound: true,
+                    }
+                } else return {
+                    ...state,
+                    notFound: false,
+                    allPokemon: resultado,
+                }
+            }
+            if(action.payload === "Tipo Roca"){
+                let resultado = state.auxiliar.filter(e => e.pokemonTypes.find(e => e === "rock"))
+                if(resultado.length === 0){
+                    return{
+                        ...state,
+                        notFound: true,
+                    }
+                } else return {
+                    ...state,
+                    notFound: false,
+                    allPokemon: resultado,
+                }
+            }
+            if(action.payload === "Tipo Bicho"){
+                let resultado = state.auxiliar.filter(e => e.pokemonTypes.find(e => e === "bug"))
+                if(resultado.length === 0){
+                    return{
+                        ...state,
+                        notFound: true,
+                    }
+                } else return {
+                    ...state,
+                    notFound: false,
+                    allPokemon: resultado,
+                }
+            }
+            if(action.payload === "Tipo Fantasma"){
+                let resultado = state.auxiliar.filter(e => e.pokemonTypes.find(e => e === "ghost"))
+                if(resultado.length === 0){
+                    return{
+                        ...state,
+                        notFound: true,
+                    }
+                } else return {
+                    ...state,
+                    notFound: false,
+                    allPokemon: resultado,
+                }
+            }
+            if(action.payload === "Tipo Acero"){
+                let resultado = state.auxiliar.filter(e => e.pokemonTypes.find(e => e === "steel"))
+                if(resultado.length === 0){
+                    return{
+                        ...state,
+                        notFound: true,
+                    }
+                } else return {
+                    ...state,
+                    notFound: false,
+                    allPokemon: resultado,
+                }
+            }
+            if(action.payload === "Tipo Fuego"){
+                let resultado = state.auxiliar.filter(e => e.pokemonTypes.find(e => e === "fire"))
+                if(resultado.length === 0){
+                    return{
+                        ...state,
+                        notFound: true,
+                    }
+                } else return {
+                    ...state,
+                    notFound: false,
+                    allPokemon: resultado,
+                }
+            }
+            if(action.payload === "Tipo Agua"){
+                let resultado = state.auxiliar.filter(e => e.pokemonTypes.find(e => e === "water"))
+                if(resultado.length === 0){
+                    return{
+                        ...state,
+                        notFound: true,
+                    }
+                } else return {
+                    ...state,
+                    notFound: false,
+                    allPokemon: resultado,
+                }
+            }
+            if(action.payload === "Tipo Planta"){
+                let resultado = state.auxiliar.filter(e => e.pokemonTypes.find(e => e === "grass"))
+                if(resultado.length === 0){
+                    return{
+                        ...state,
+                        notFound: true,
+                    }
+                } else return {
+                    ...state,
+                    notFound: false,
+                    allPokemon: resultado,
+                }
+            }
+            if(action.payload === "Tipo Electrico"){
+                let resultado = state.auxiliar.filter(e => e.pokemonTypes.find(e => e === "electric"))
+                if(resultado.length === 0){
+                    return{
+                        ...state,
+                        notFound: true,
+                    }
+                } else return {
+                    ...state,
+                    notFound: false,
+                    allPokemon: resultado,
+                }
+            }
+            if(action.payload === "Tipo Psíquico"){
+                let resultado = state.auxiliar.filter(e => e.pokemonTypes.find(e => e === "psychic"))
+                if(resultado.length === 0){
+                    return{
+                        ...state,
+                        notFound: true,
+                    }
+                } else return {
+                    ...state,
+                    notFound: false,
+                    allPokemon: resultado,
+                }
+            }
+            if(action.payload === "Tipo Hielo"){
+                let resultado = state.auxiliar.filter(e => e.pokemonTypes.find(e => e === "ice"))
+                if(resultado.length === 0){
+                    return{
+                        ...state,
+                        notFound: true,
+                    }
+                } else return {
+                    ...state,
+                    notFound: false,
+                    allPokemon: resultado,
+                }
+            }
+            if(action.payload === "Tipo Dragón"){
+                let resultado = state.auxiliar.filter(e => e.pokemonTypes.find(e => e === "dragon"))
+                if(resultado.length === 0){
+                    return{
+                        ...state,
+                        notFound: true,
+                    }
+                } else return {
+                    ...state,
+                    notFound: false,
+                    allPokemon: resultado,
+                }
+            }
+            if(action.payload === "Tipo Siniestro"){
+                let resultado = state.auxiliar.filter(e => e.pokemonTypes.find(e => e === "dark"))
+                if(resultado.length === 0){
+                    return{
+                        ...state,
+                        notFound: true,
+                    }
+                } else return {
+                    ...state,
+                    notFound: false,
+                    allPokemon: resultado,
+                }
+            }
+            if(action.payload === "Tipo Hada"){
+                let resultado = state.auxiliar.filter(e => e.pokemonTypes.find(e => e === "fairy"))
+                if(resultado.length === 0){
+                    return{
+                        ...state,
+                        notFound: true,
+                    }
+                } else return {
+                    ...state,
+                    notFound: false,
+                    allPokemon: resultado,
+                }
+            }
+            break;
 
         case LOADING:
             return {
