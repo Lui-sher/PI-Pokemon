@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { connect } from 'react-redux';
 import Cards from "./Cards";
 import s from './Pages.module.css';
@@ -10,6 +10,8 @@ function Pages (prop){
         contador: 0,
         pagina: 0
     })
+
+    useEffect(()=>{SetPaginado({contador:0, pagina:0})}, [prop.allPokemon])
 
     const pagesNumber = Math.ceil(prop.allPokemon.length/12)
     const pagina = prop.allPokemon.slice(paginado.contador, paginado.contador+12)
@@ -30,7 +32,9 @@ function Pages (prop){
                 →
             </button>
 
+            <hr/>
             <Cards allPokemon={pagina}/>
+            <hr/>
 
             <button onClick ={() => 
                 paginado.pagina > 0 ? 

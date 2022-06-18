@@ -1,10 +1,12 @@
 export const GET_ALL_POKEMON = 'get_all_pokemon';
+export const POST_POKEMON = 'post_pokemon';
 export const LOADING = 'loading';
 export const ORDENAR = 'ordenar';
 export const FILTRAR = 'filtrar';
 export const SHOW_CARD = 'show_card';
 export const ON_SEARCH = 'on_search';
 export const GET_ONE_POKEMON = 'get_one_pokemon';
+export const GET_TYPES = 'get_types';
 
 
 export function getAllPokemon (data){
@@ -17,6 +19,22 @@ export function getAllPokemon (data){
 export function getOnePokemon (data){
     return {
         type: GET_ONE_POKEMON,
+        payload: data
+    }
+}
+
+export function getTypes (){
+    return async function (dispatch){
+        const r = await fetch(`http://localhost:3001/types`);
+        const json = await r.json();
+        return dispatch({ type: GET_TYPES, payload: json });
+    }
+}
+
+export function post_pokemon (data){
+    console.log(data)
+    return {
+        type: POST_POKEMON,
         payload: data
     }
 }
@@ -48,6 +66,7 @@ export function loading(){
     }
 }
 
+
 export function requestBd() {
     return function (dispatch) {
       dispatch(loading());
@@ -59,9 +78,7 @@ export function requestBd() {
 }
 
 export function onSearch(data) {
-
     if(typeof(data) === 'string'){
-
         return function (dispatch) {
             dispatch(loading());
             fetch(`http://localhost:3001/pokemons?name=${data}`)
@@ -70,7 +87,7 @@ export function onSearch(data) {
                 .catch(e => dispatch(getOnePokemon(e)));
         }
     } else {
-
+        
         return function (dispatch) {
             dispatch(loading());
             fetch(`http://localhost:3001/pokemons/${data}`)
@@ -78,5 +95,33 @@ export function onSearch(data) {
                 .then(json => dispatch(getOnePokemon(json)))
                 .catch(e => dispatch(getOnePokemon(e)));
         }
+    }
+}
+
+export function newPokemonCreateApi (data){
+    return async function(dispatch){
+        const res = await fetch('http://localhost:3001/pokemons', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(data)
+        });
+        const json = await res.json();
+        const json2 = await fetch(`http://localhost:3001/pokemons?name=${data.name}`)
+                .then(r => r.json())
+        const aux = {
+            name: json2.name,
+            image: json.image,
+            pokedexNumber: json2.pokedexNumber,
+            hp: json2.hp,
+            attack: json2.attack,
+            defense: json2.defense,
+            speed: json2.speed,
+            height: json2.height,
+            weight: json2.weight,
+            pokemonTypes: json2.pokemonTypes.map(e => {return (e.name)}),
+        }
+        return dispatch({ type: POST_POKEMON, payload: aux });
     }
 }

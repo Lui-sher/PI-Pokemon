@@ -9,9 +9,9 @@ function Filter ({filtrar}){
 
     return(
         <div className={s.contenedor}>
-            <div>
-                Filtar por: 
-            </div>
+            <h4>
+                Filtar por:
+            </h4>
             <form onSubmit={(e) => { e.preventDefault(); filtrar(tipo);}}>
                 <select value={tipo} onChange={e => setTipo(e.target.value)}>
                     <option>Todos</option>

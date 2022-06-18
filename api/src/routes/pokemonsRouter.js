@@ -41,29 +41,50 @@ const CargarAllPokemon = async () => {
       } 
       allPokemonApi.push(infoApi)
   }
-  console.log(allPokemonApi)
+  // console.log(allPokemonApi)
 
-  let allPokemonDb = await Pokemon.findAll({
-    include: {
-      model: PokemonTypes
+  const allPokemonDb = await Pokemon.findAll({
+    include: [
+      {model: PokemonTypes,
+      attributes:['name'],
+      through:{
+        attributes: [],
+      }
     }
+  ]
   })
-
-  let allPokemon = [...allPokemonApi, ...allPokemonDb]
+  
+  const aux = [];
+  for (let i = 0; i < allPokemonDb.length; i++) {
+    aux.push({
+      name: allPokemonDb[i].name,
+      image: allPokemonDb[i].image,
+      pokedexNumber: allPokemonDb[i].pokedexNumber,
+      hp: allPokemonDb[i].hp,
+      attack: allPokemonDb[i].attack,
+      defense: allPokemonDb[i].defense,
+      speed: allPokemonDb[i].speed,
+      height: allPokemonDb[i].height,
+      weight: allPokemonDb[i].weight,
+      pokemonTypes: allPokemonDb[i].pokemonTypes.map(e => {return (e.name)})
+    })
+  }
+  
+  let allPokemon = [...allPokemonApi, ...aux]
   
   return allPokemon;
 }
 
 router.get('', async (req, res) => {
   const {name} = req.query;
-  console.log('PokemonRouter/62', name);
+
 
   if(name){
     const pokemonBd = await Pokemon.findAll({
       where:{name},
       include: {model: PokemonTypes}
     });
-    console.log('PokemonRouter/69', pokemonBd[0])
+
     if(pokemonBd.length > 0){
       const {name, pokedexNumber, hp, attack, defense, speed, height, weight, pokemonTypes} = pokemonBd[0];
       const filtro = {
@@ -84,7 +105,7 @@ router.get('', async (req, res) => {
       
       let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
       if(response.status === 404){return res.status(404).send('nombre no encontrado')}
-      //console.log('Soy Response = ',response.status);
+
           let data = await response.json();
           let infoPokemon = {
             image: data.sprites.other.home.front_default,
@@ -124,6 +145,7 @@ router.get('/:id', async (req, res) => {
           speed: data.stats[5].base_stat,     //velocidad
           height: data.height,                //altura
           weight: data.weight,                //peso
+          pokemonTypes: data.types.map(e => e.type.name),
         }
 
     return res.send(infoApi)
@@ -132,9 +154,16 @@ router.get('/:id', async (req, res) => {
   if(id>898){
     const pokemonBd = await Pokemon.findAll({
       where:{pokedexNumber: id},
-      include: {model: PokemonTypes}
+      include: [
+          {model: PokemonTypes,
+          attributes:['name'],
+          through:{
+            attributes: [],
+          }
+        }
+      ]
     });
-    console.log('PokemonRouter/140', pokemonBd[0])
+
     if(pokemonBd.length > 0){
       const {name, pokedexNumber, hp, attack, defense, speed, height, weight, pokemonTypes} = pokemonBd[0];
       const filtro = {
@@ -156,22 +185,28 @@ router.get('/:id', async (req, res) => {
 });
 
 let id = 899
-router.post('', async (req, res) => {
 
-  const { name, hp, attack, defense, speed, height, weight, pokemonTypes} = req.body
+router.post('', async (req, res) => {
+console.log("soy req.body",req.body)
+  const { name, image, hp, attack, defense, speed, height, weight, pokemonTypes} = req.body
   const newPokemon = await Pokemon.create({
     pokedexNumber: id++,
     name,
+    image,
     hp,
     attack,
     defense,
     speed,
     height,
-    weight,
-    pokemonTypes,
+    weight
   })
 
-  
+  const DBTypes = await PokemonTypes.findAll({
+    where: {name: pokemonTypes}
+  })
+
+  newPokemon.addPokemonTypes(DBTypes)
+  console.log("Soy new pokemon tratando de tener types" ,DBTypes)
   res.json(newPokemon)
 })
 

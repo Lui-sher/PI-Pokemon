@@ -3,33 +3,393 @@
     justify-content: center;
 }
 
-.card {
+a:link{
+    text-decoration:none;
+}
+
+.fairy {
+    margin-block: 20px;
+    margin-inline: 30px;
+    background-color:  rgb(251 137 235);
+    width: 150px;
+    height: 240px;
+    border-radius: 13px;
+    box-shadow: -18px 20px 18px -5px rgb(0 0 0);
+    background-image: url("../Gif/hada.gif");
+    background-size: 258% 184%;
+    background-position: -158px -91px;
+}
+
+.fairy img {
+    width: 95%;
+    position: relative;
+    top: -68px;
+    filter: drop-shadow(0px 0px 3px rgb(255, 65, 255));
+}
+
+.dark {
+    margin-block: 20px;
+    margin-inline: 30px;
+    background-color: rgb(136 127 151);
+    width: 150px;
+    height: 240px;
+    border-radius: 13px;
+    box-shadow: -18px 20px 18px -5px rgb(0 0 0);
+    /* background-image: url("../Gif/electric.gif"); */
+    background-size: 200% 200%;
+    background-position: -63px -158px;
+}
+
+.dark img {
+    width: 95%;
+    position: relative;
+    top: -68px;
+    filter: drop-shadow(0px 0px 3px rgb(255, 65, 255));
+}
+
+.dragon {
+    margin-block: 20px;
+    margin-inline: 30px;
+    background-color:  rgb(0 111 201);
+    width: 150px;
+    height: 240px;
+    border-radius: 13px;
+    box-shadow: -18px 20px 18px -5px rgb(0 0 0);
+    background-image: url("../Gif/dragon.gif");
+    background-size: 114% 38%;
+    background-position: 0px 0px;
+}
+
+.dragon img {
+    width: 95%;
+    position: relative;
+    top: -68px;
+    filter: drop-shadow(0px 0px 3px rgb(255, 65, 255));
+}
+
+.ice {
     margin-block: 20px;
     margin-inline: 30px;
     background-color: rgb(0, 0, 0);
     width: 150px;
-    height: 280px;
+    height: 240px;
     border-radius: 13px;
     box-shadow: -18px 20px 18px -5px rgb(0 0 0);
+    background-image: url("../Gif/hielo.gif");
+    background-size: 154% 85%;
+    background-position: 0px 0px;
+}
+
+.ice img {
+    width: 95%;
+    position: relative;
+    top: -68px;
+    filter: drop-shadow(0px 0px 3px rgb(255, 65, 255));
+}
+
+.psychic {
+    margin-block: 20px;
+    margin-inline: 30px;
+    background-color: rgb(255 102 117);
+    width: 150px;
+    height: 240px;
+    border-radius: 13px;
+    box-shadow: -18px 20px 18px -5px rgb(0 0 0);
+    background-image: url("../Gif/hipnosis.gif");
+    background-size: 100% 30%;
+    background-position: 0px 0px;
+}
+
+.psychic img {
+    width: 95%;
+    position: relative;
+    top: -68px;
+    filter: drop-shadow(0px 0px 3px rgb(255, 65, 255));
+}
+
+.grass {
+    margin-block: 20px;
+    margin-inline: 30px;
+    background-color: rgb(0, 0, 0);
+    width: 150px;
+    height: 240px;
+    border-radius: 13px;
+    box-shadow: -18px 20px 18px -5px rgb(0 0 0);
+    background-image: url("../Gif/planta.gif");
+    background-size: 230% 100%;
+    background-position: -148px 0px;
+}
+
+.grass img {
+    width: 95%;
+    position: relative;
+    top: -68px;
+    filter: drop-shadow(0px 0px 3px rgb(255, 65, 255));
+}
+
+.water {
+    margin-block: 20px;
+    margin-inline: 30px;
+    background-color: rgb(0, 0, 0);
+    width: 150px;
+    height: 240px;
+    border-radius: 13px;
+    box-shadow: -18px 20px 18px -5px rgb(0 0 0);
+    background-image: url("../Gif/agua.gif");
+    background-size: 200% 200%;
+    background-position: -63px -158px;
+}
+
+.water img {
+    width: 95%;
+    position: relative;
+    top: -68px;
+    filter: drop-shadow(0px 0px 3px rgb(255, 65, 255));
+}
+
+.fire {
+    margin-block: 20px;
+    margin-inline: 30px;
+    background-color: rgb(0, 0, 0);
+    width: 150px;
+    height: 240px;
+    border-radius: 13px;
+    box-shadow: -18px 20px 18px -5px rgb(0 0 0);
+    background-image: url("../Gif/fuego.gif");
+    background-size: 385% 206%;
+    background-position: -222px -236px;
+}
+
+.fire img {
+    width: 95%;
+    position: relative;
+    top: -68px;
+    filter: drop-shadow(0px 0px 3px rgb(255, 65, 255));
+}
+
+.steel {
+    margin-block: 20px;
+    margin-inline: 30px;
+    background-color: rgb(90 142 162);
+    width: 150px;
+    height: 240px;
+    border-radius: 13px;
+    box-shadow: -18px 20px 18px -5px rgb(0 0 0);
+    background-image: url("../Gif/acero.gif");
+    background-size: 300% 139%;
+    background-position: -162px -45px;
+}
+
+.steel img {
+    width: 95%;
+    position: relative;
+    top: -68px;
+    filter: drop-shadow(0px 0px 3px rgb(255, 65, 255));
+}
+
+.ghost {
+    margin-block: 20px;
+    margin-inline: 30px;
+    background-color: rgb(0, 0, 0);
+    width: 150px;
+    height: 240px;
+    border-radius: 13px;
+    box-shadow: -18px 20px 18px -5px rgb(0 0 0);
+    background-image: url("../Gif/fantasma.gif");
+    background-size: 100% 200%;
+    background-position: 0px 281px;
+}
+
+.ghost img {
+    width: 95%;
+    position: relative;
+    top: -68px;
+    filter: drop-shadow(0px 0px 3px rgb(255, 65, 255));
+}
+
+.bug {
+    margin-block: 20px;
+    margin-inline: 30px;
+    background-color: rgb(131 195 0);
+    width: 150px;
+    height: 240px;
+    border-radius: 13px;
+    box-shadow: -18px 20px 18px -5px rgb(0 0 0);
+    background-image: url("../Gif/bug.gif");
+    background-size: 200% 100%;
+    background-position: 0px 0px;
+}
+
+.bug img {
+    width: 95%;
+    position: relative;
+    top: -68px;
+    filter: drop-shadow(0px 0px 3px rgb(255, 65, 255));
+}
+
+.rock {
+    margin-block: 20px;
+    margin-inline: 30px;
+    background-color:  rgb(200 182 134);
+    width: 150px;
+    height: 240px;
+    border-radius: 13px;
+    box-shadow: -18px 20px 18px -5px rgb(0 0 0);
+    background-image: url("../Gif/rocaFondo.png");
+    background-size: 223% 100%;
+    background-position: 0px 80px;
+}
+
+.rock img {
+    width: 95%;
+    position: relative;
+    top: -68px;
+    filter: drop-shadow(0px 0px 3px rgb(255, 65, 255));
+}
+
+.ground {
+    margin-block: 20px;
+    margin-inline: 30px;
+    background-color: rgb(232 114 54);
+    width: 150px;
+    height: 240px;
+    border-radius: 13px;
+    box-shadow: -18px 20px 18px -5px rgb(0 0 0);
+    background-image: url("../Gif/tierra.gif");
+    background-size: 200% 100%;
+    background-position: -26px 0px;
+}
+
+.ground img {
+    width: 95%;
+    position: relative;
+    top: -68px;
+    filter: drop-shadow(0px 0px 3px rgb(255, 65, 255));
+}
+.poison {
+    margin-block: 20px;
+    margin-inline: 30px;
+    background-color: rgb(0, 0, 0);
+    width: 150px;
+    height: 240px;
+    border-radius: 13px;
+    box-shadow: -18px 20px 18px -5px rgb(0 0 0);
+    background-image: url("../Gif/veneno.gif");
+    background-size: 358% 200%;
+    background-position: -200px 0px;
+}
+
+.poison img {
+    width: 95%;
+    position: relative;
+    top: -68px;
+    filter: drop-shadow(0px 0px 3px rgb(255, 65, 255));
+}
+.flying {
+    margin-block: 20px;
+    margin-inline: 30px;
+    background-color: rgb(0, 0, 0);
+    width: 150px;
+    height: 240px;
+    border-radius: 13px;
+    box-shadow: -18px 20px 18px -5px rgb(0 0 0);
+    background-image: url("../Gif/volador.gif");
+    background-size: 200% 200%;
+    background-position: -63px -158px;
+}
+
+.flying img {
+    width: 95%;
+    position: relative;
+    top: -68px;
+    filter: drop-shadow(0px 0px 3px rgb(255, 65, 255));
+}
+.fighting {
+    margin-block: 20px;
+    margin-inline: 30px;
+    background-color:  rgb(224 48 106);
+    width: 150px;
+    height: 240px;
+    border-radius: 13px;
+    box-shadow: -18px 20px 18px -5px rgb(0 0 0);
+    background-image: url("../Gif/lucha.gif");
+    background-size: 272% 165%;
+    background-position: -129px 272px;
+}
+
+.fighting img {
+    width: 95%;
+    position: relative;
+    top: -68px;
+    filter: drop-shadow(0px 0px 3px rgb(255, 65, 255));
+}
+.normal {
+    margin-block: 20px;
+    margin-inline: 30px;
+    background-color:  rgb(190 203 215);
+    width: 150px;
+    height: 240px;
+    border-radius: 13px;
+    box-shadow: -18px 20px 18px -5px rgb(0 0 0);
+    /* background-image: url("../Gif/electric.gif"); */
+    background-size: 200% 200%;
+    background-position: -63px -158px;
+}
+
+.normal img {
+    width: 95%;
+    position: relative;
+    top: -68px;
+    filter: drop-shadow(0px 0px 3px rgb(255, 65, 255));
+}
+
+.electric {
+    margin-block: 20px;
+    margin-inline: 30px;
+    background-color: rgb(0, 0, 0);
+    width: 150px;
+    height: 240px;
+    border-radius: 13px;
+    box-shadow: -18px 20px 18px -5px rgb(0 0 0);
+    background-image: url("../Gif/electric.gif");
+    background-size: 148% 161%;
+    background-position: -63px -158px;
+}
+
+.electric img {
+    width: 95%;
+    position: relative;
+    top: -68px;
+    filter: drop-shadow(0px 0px 3px gold);
 }
 
 .lienzo {
     color: white;
-    background-color: rgb(255, 0, 0);
+    /* background-size: 200% 200%; */
+    background: linear-gradient(to bottom right, #ffffff, #80FF00);
+    /* background-position: 20px; */
     margin-left: 10px;
     margin-right: 10px;
     border-top-width: 10px;
     position: relative;
-    top: 78px;
+    top: 69px;
     border-radius: 10px;
-    height: 192px;
+    height: 160px;
 }
 
-.card img {
-    width: 100%;
-    position: relative;
-    top: -75px;
-    filter: drop-shadow(0px 0px 3px rgb(255, 65, 255));
+
+.type {
+    border-style: solid;
+    display: flex;
+    background-color: rgb(0 0 0);
+    border-radius: 6px;
+    width: 95%;
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    color: white;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .info {
@@ -42,8 +402,18 @@
     top: -75px
 }
 
+.imagen {
+    height: 130px;
+}
+
+.info img {
+    width: 20px;
+    position: inherit;
+    filter: drop-shadow(0px 0px 0px rgb(251, 209, 0));
+}
+
 .data {
-    margin-top: 10px;
+    /* margin-top: 13px; */
     font: condensed 81% sans-serif;
     font-weight: 600;
     font-size: 15px;
@@ -71,128 +441,12 @@
     border-color: rgb(255 255 255);
     border-radius: 35px;
     background-color: black;
+    
 }
 
-.name h3{
+.name h5{
     margin: 0;
     padding-block: 3px;
 }
 
-.normal{
-    background: #919aa2;
-    border-radius: 4px;
-    COLOR: rgb(0, 0, 0);
-}
-
-.fighting{
-    background: #e0306a;
-    border-radius: 4px;
-    COLOR: rgb(0, 0, 0);
-}
-
-.flying{
-    background: #89aae3;
-    border-radius: 4px;
-    COLOR: rgb(0, 0, 0);
-}
-
-.poison{
-    background: #b567ce;
-    border-radius: 4px;
-    COLOR: rgb(0, 0, 0);
-}
-
-.ground{
-    background: #e87236;
-    border-radius: 4px;
-    COLOR: rgb(0, 0, 0);
-}
-
-.rock{
-    background: #c8b686;
-    border-radius: 4px;
-    COLOR: rgb(0, 0, 0);
-}
-
-.bug{
-    background: #83c300;
-    border-radius: 4px;
-    COLOR: rgb(0, 0, 0);
-}
-
-.ghost{
-    background: #4c6ab2;
-    border-radius: 4px;
-    COLOR: rgb(0, 0, 0);
-}
-
-.steel{
-    background: #5a8ea2;
-    border-radius: 4px;
-    COLOR: rgb(0, 0, 0);
-}
-.fire{
-    background: #ff9741;
-    border-radius: 4px;
-    COLOR: rgb(0, 0, 0);
-}
-
-.water{
-    background: #3692dc;;
-    border-radius: 4px;
-    COLOR: rgb(0, 0, 0);
-}
-.grass{
-    background: #38bf4b;
-    border-radius: 4px;
-    COLOR: rgb(0, 0, 0);
-}
-
-.electric{
-    background: #fbd100;
-    border-radius: 4px;
-    COLOR: BLACK;
-}
-
-.psychic{
-    background: #ff6675;;
-    border-radius: 4px;
-    COLOR: rgb(0, 0, 0);
-}
-
-.ice{
-    background: #4cd1c0;
-    border-radius: 4px;
-    COLOR: rgb(0, 0, 0);
-}
-
-.dragon{
-    background: #006fc9;
-    border-radius: 4px;
-    COLOR: rgb(0, 0, 0);
-}
-
-.dark{
-    background: #5b5466;
-    border-radius: 4px;
-    COLOR: rgb(251, 255, 0);
-}
-
-.fairy{
-    background: #fb89eb;
-    border-radius: 4px;
-    COLOR: rgb(0, 0, 0);
-}
-
-.unknown{
-    background: #00f7ff;
-    border-radius: 4px;
-    COLOR: rgb(0, 0, 0);
-}
-
-.shadow{
-    background: #00f7ff;
-    border-radius: 4px;
-    COLOR: rgb(0, 0, 0);
-}
 

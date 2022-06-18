@@ -10,9 +10,9 @@ function OrdenarCards ({ordenar}){
 
     return (
         <div className={s.contenedor}>
-            <div>
-                Ordenar por: 
-            </div>
+            <h4>
+                Ordenar por:
+            </h4>
             <form onSubmit={(e) => { e.preventDefault(); ordenar(tipo);}}>
                 <select value={tipo} onChange={e => setTipo(e.target.value)}>
                     <option>Pokedex ↑</option>

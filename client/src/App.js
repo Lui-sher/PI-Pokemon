@@ -5,6 +5,7 @@ import Inicio from './components/Inicio.js';
 import Home from './components/Home.js'
 import NavBar from './components/NavBar.js';
 import Detalles from './components/Detalles.js';
+import CreatePokemon from './components/CreatePokemon.js';
 import './App.css';
 
 
@@ -19,7 +20,8 @@ function App({auxiliar}){
         <Route exact path="/" component={Inicio} />
         <Route path="/home" component={NavBar} />
         <Route exact path="/home" component={Home} />
-        <Route exact path='/home/:pokemonId' render={({match}) => <Detalles pokemon={onFilter(match.params.pokemonId)}/>} />
+        <Route exact path='/home/pokemon/:pokemonId' render={({match}) => <Detalles pokemon={onFilter(match.params.pokemonId)}/>} />
+        <Route exact path="/home/createPokemon" component={CreatePokemon}/>
     </div>
   );
 }

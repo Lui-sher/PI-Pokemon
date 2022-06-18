@@ -12,8 +12,9 @@ router.get('/', async (req, res) => {
         let aux = []
         data.results.map(e => aux.push(e.name))
         //console.log(aux)
-        aux.forEach( e => PokemonTypes.create({name: e}))
+        aux.forEach( e => PokemonTypes.findOrCreate({ where: {name: e}}))
         gate = false;
+        // console.log("soy yo .................................",aux)
     }
 
     const typesAll = await PokemonTypes.findAll();

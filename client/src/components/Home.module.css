@@ -4,6 +4,12 @@
     align-items: center;
 }
 
+.borrador{
+    display: flex;
+    justify-content: space-evenly;
+    width: 600px;
+}
+
 .loading {
     display: flex;
     max-width: 387px;

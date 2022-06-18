@@ -12,27 +12,25 @@ function SearchBar({onSearch, auxiliar, showCard}) {
     setPokemonName("")
     
     if(isNaN(value)){
-      //console.log("soy un string", value)
+  
       const data = value.toLowerCase()
       const pokemon = []
       pokemon.push(auxiliar.find(e => e.name === data))
-      //console.log(pokemon)
+
       if(pokemon[0] === undefined){
-        //console.log(`Pokemon ${data} no hallado localmente, busquemos en la API local`)
+        
         return onSearch(data)
       }else {
-        //console.log(`Pokemon ${data} hallado localmente`)
         return showCard(pokemon)
       }
     } else {
-      //console.log("soy un numero", value)
+
       const pokemon = []
       pokemon.push(auxiliar.find(e => e.pokedexNumber === (1*value)))
       if(pokemon[0] === undefined){
-        //console.log(`Pokemon ${value} no hallado localmente, busquemos en la API local`)
-        return onSearch(value)
+        
+        return onSearch(1*value)
       }else {
-        //console.log(`Pokemon ${value} hallado localmente`)
         return showCard(pokemon)
       }
     }
@@ -45,7 +43,7 @@ function SearchBar({onSearch, auxiliar, showCard}) {
     }}>
       <input
         type="text"
-        placeholder="Pokemon Name..."
+        placeholder="Name or Pokedex..."
         value={pokemonName}
         onChange={e => setPokemonName(e.target.value)}
       />

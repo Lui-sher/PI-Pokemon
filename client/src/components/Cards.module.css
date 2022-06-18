@@ -3,3 +3,11 @@
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
+.agrandar{
+    transition: 0.6s;
+}
+
+.agrandar:hover {
+    transform: scale(1.1);
+}

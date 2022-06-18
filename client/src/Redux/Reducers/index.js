@@ -1,16 +1,17 @@
-import { FILTRAR, GET_ALL_POKEMON, LOADING, ORDENAR, SHOW_CARD, GET_ONE_POKEMON} from "../Actions/index";
+import { FILTRAR, GET_ALL_POKEMON, LOADING, ORDENAR, SHOW_CARD, GET_ONE_POKEMON, POST_POKEMON, GET_TYPES} from "../Actions/index";
 
 const initialState = {
     loading: false,
     notFound: false,
+    pokemonTypes:[],
     auxiliar: [],
     allPokemon: [],
+    gamePokemon: [],
 }
 
 export default function reducer (state=initialState, action){
     switch (action.type) {
         case GET_ALL_POKEMON:
-            // console.log(action.payload)
             return {
                 ...state,
                 loading: !state.loading,
@@ -19,7 +20,6 @@ export default function reducer (state=initialState, action){
             }
 
         case GET_ONE_POKEMON:
-
             if(action.payload.hasOwnProperty('name')){
                 const newPokemon = [action.payload]
                 return {
@@ -27,10 +27,9 @@ export default function reducer (state=initialState, action){
                     loading: !state.loading,
                     notFound: false,
                     allPokemon: newPokemon,
-                    auxiliar: [...newPokemon, ...state.auxiliar]
+                    auxiliar: [...newPokemon, ...state.auxiliar],
                 }
             } else {
-                console.log("desepues de la consulta en la API local")
                 return{
                     ...state,
                     loading: !state.loading,
@@ -38,6 +37,18 @@ export default function reducer (state=initialState, action){
                 }
             }
 
+        case POST_POKEMON:
+            return{
+                ...state,
+                auxiliar: [...state.auxiliar, action.payload],
+            }
+
+        case GET_TYPES:
+            return {
+                ...state,
+                pokemonTypes: action.payload,
+            }
+            
         case ORDENAR:
             function quickSort(array) {
 
@@ -121,7 +132,7 @@ export default function reducer (state=initialState, action){
                 }
             }
             if(action.payload === "Creados"){
-                let resultado = state.auxiliar.filter(e => e.pokedexNumber > 899);
+                let resultado = state.auxiliar.filter(e => e.pokedexNumber > 898);
                 if(resultado.length === 0){
                     return {
                         ...state,
