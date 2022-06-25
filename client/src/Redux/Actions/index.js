@@ -108,19 +108,17 @@ export function newPokemonCreateApi (data){
             body: JSON.stringify(data)
         });
         const json = await res.json();
-        const json2 = await fetch(`http://localhost:3001/pokemons?name=${data.name}`)
-                .then(r => r.json())
         const aux = {
-            name: json2.name,
-            image: json.image,
-            pokedexNumber: json2.pokedexNumber,
-            hp: json2.hp,
-            attack: json2.attack,
-            defense: json2.defense,
-            speed: json2.speed,
-            height: json2.height,
-            weight: json2.weight,
-            pokemonTypes: json2.pokemonTypes.map(e => {return (e.name)}),
+            name: data.name,
+            image: data.image,
+            pokedexNumber: json.pokedexNumber,
+            hp: data.hp,
+            attack: data.attack,
+            defense: data.defense,
+            speed: data.speed,
+            height: data.height,
+            weight: data.weight,
+            pokemonTypes: data.pokemonTypes,
         }
         return dispatch({ type: POST_POKEMON, payload: aux });
     }

@@ -5,11 +5,39 @@
     background-color: black;
 }
 
+.contenedor button {
+    height: 108px;
+    border-radius: 58px;
+    border-color: rgb(213 209 91);
+    background-color: black;
+    border-width: 22px;
+    color: white;
+    cursor: pointer;
+    box-shadow: -11px 7px 3px 2px rgb(0 0 0);
+}
+
 .contenedor img {
     width: 100%;
 }
 
-.contenedor button {
-    position: relative;
-    top: -300px;
+.contenedor a {
+    position: absolute;
+    top: 15%;
+    left: 11%;
+}
+
+.texto {
+    position: absolute;
+    background-color: rgb(255 0 0);
+    display: flex;
+    border-radius: 26px;
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+    color: #fff000;
+    padding-inline: 18px;
+}
+
+.texto h1 {
+    filter: drop-shadow(-4px 4px 1px rgb(0, 0, 0));
 }

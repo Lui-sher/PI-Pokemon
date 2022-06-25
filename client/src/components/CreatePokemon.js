@@ -19,12 +19,12 @@ function CreatePokemon ({newPokemonCreateApi}) {
     const [data, setData] = useState({
         name: '',
         image: '',
-        attack: '',
-        defense: '',
-        hp: '',
-        speed: '',
-        height: '',
-        weight: '',
+        attack: '1',
+        defense: '1',
+        hp: '1',
+        speed: '1',
+        height: '1',
+        weight: '1',
         pokemonTypes:["normal"],
         hayAlgunoVacio: true,
         pokemonCreado: false,
@@ -66,12 +66,12 @@ function CreatePokemon ({newPokemonCreateApi}) {
                 setData({
                     name: '',
                     image: '',
-                    attack: '',
-                    defense: '',
-                    hp: '',
-                    speed: '',
-                    height: '',
-                    weight: '',
+                    attack: '1',
+                    defense: '1',
+                    hp: '1',
+                    speed: '1',
+                    height: '1',
+                    weight: '1',
                     pokemonTypes:["normal"],
                     hayAlgunoVacio: true,
                     pokemonCreado: true,
@@ -180,7 +180,7 @@ function CreatePokemon ({newPokemonCreateApi}) {
                                     <option>dark</option>
                                     <option>fairy</option>
                                 </select>
-                                {/* <br/> */}
+
                                 <select 
                                 value={data.pokemonTypes[1]} 
                                 onChange={e => setData({
