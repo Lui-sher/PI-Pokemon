@@ -1,4 +1,4 @@
-import { FILTRAR, GET_ALL_POKEMON, LOADING, ORDENAR, SHOW_CARD, GET_ONE_POKEMON, POST_POKEMON, GET_TYPES} from "../Actions/index";
+import { FILTRAR, GET_ALL_POKEMON, LOADING, ORDENAR, SHOW_CARD, GET_ONE_POKEMON, POST_POKEMON, GET_TYPES, GET_POKEMON_GAME} from "../Actions/index";
 
 const initialState = {
     loading: false,
@@ -6,7 +6,7 @@ const initialState = {
     pokemonTypes:[],
     auxiliar: [],
     allPokemon: [],
-    gamePokemon: [],
+    pokemonGame: [],
 }
 
 export default function reducer (state=initialState, action){
@@ -391,6 +391,12 @@ export default function reducer (state=initialState, action){
             return {
                 ...state,
                 allPokemon: action.payload,
+            }
+    
+        case GET_POKEMON_GAME:
+            return {
+                ...state,
+                pokemonGame: action.payload,
             }
     
         default:

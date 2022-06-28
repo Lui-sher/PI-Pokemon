@@ -7,6 +7,7 @@ import NavBar from './components/NavBar.js';
 import Detalles from './components/Detalles.js';
 import CreatePokemon from './components/CreatePokemon.js';
 import './App.css';
+import Game from './components/Game/Game.js';
 
 
 function App({auxiliar}){
@@ -22,6 +23,7 @@ function App({auxiliar}){
         <Route exact path="/home" component={Home} />
         <Route exact path='/home/pokemon/:pokemonId' render={({match}) => <Detalles pokemon={onFilter(match.params.pokemonId)}/>} />
         <Route exact path="/home/createPokemon" component={CreatePokemon}/>
+        <Route exact path="/home/game" component={Game}/>
     </div>
   );
 }

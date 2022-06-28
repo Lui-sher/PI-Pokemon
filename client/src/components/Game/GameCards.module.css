@@ -1,0 +1,71 @@
+.rotar {
+    transform: rotate3d(0, 1, 0, 90deg);
+    display: flex;
+    justify-content: center;
+    width: 178px;
+    transition: 0.6s;
+}
+
+.normal {
+    display: flex;
+    justify-content: center;
+    width: 177px;
+    transform: rotate3d(0, 1, 0, 0deg);
+    transition: 0.6s;
+}
+
+.normal:hover {
+    transform: scale(1.1);
+}
+
+.card {
+    border-radius: 13px;
+    background-image: url("../../Images/card-back.jpg");
+    background-size: 150px 240px;
+    width: 150px;
+    height: 240px;
+    box-shadow: -18px 20px 18px -5px rgb(0 0 0);
+}
+
+.contenedor{
+    /* transform: scale(0.8); */
+    display: flex;
+    flex-wrap: wrap;
+    width: 841px;
+    height: 1000px;
+    align-content: flex-start;
+    justify-content: center;
+}
+
+.back {
+    width: 0px;
+    height: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: -260px;
+    left: 87px;
+}
+
+.general {
+    display: flex;
+    transform: scale(0.8);
+    position: relative;
+    top: -100px;
+    /* left: -112px; */
+    align-items: center;
+    justify-content: center;
+}
+
+.ganar {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #0080008f;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+}

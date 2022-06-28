@@ -21,11 +21,9 @@ export default function NavBar (){
                 <h4>CREAR POKEMON</h4>
             </Link>
 
-            {/* <Link to={'/game'}>
+            <Link to={'/home/game'}>
                 <h4>GAME</h4>
-            </Link> */}
-
-
+            </Link>
         </div>
     );
 }

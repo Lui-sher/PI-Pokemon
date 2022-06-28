@@ -5,7 +5,6 @@ import notFoundImage from '../Images/pikachuTriste.gif';
 import s from "./Home.module.css";
 import { connect } from 'react-redux';
 import { getTypes, requestBd } from '../Redux/Actions/index.js';
-// import Card from "./Card";
 
 let x = true;
 
@@ -17,10 +16,6 @@ function Home (prop){
     }
     return(
         <div className={s.contenedor}>
-            {/* <div className={s.borrador}>
-                <Card/>
-            </div> */}
-            
             {
             prop.loading 
             ?
@@ -37,7 +32,6 @@ function Home (prop){
             </div>
             :
             <div>
-                
                 <Pages/>
             </div>
             }
