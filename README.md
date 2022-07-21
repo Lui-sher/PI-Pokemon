@@ -1,7 +1,7 @@
 # Single Page Aplication Pokemon
 
 <p align="left">
-  <img height="150" src="./pokemon.png" />
+  <img height="150" src="./pikachu.png" />
 </p>
 
 ## Descripcion
