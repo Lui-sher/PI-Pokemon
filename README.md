@@ -12,7 +12,7 @@ El reto para este proyecto fue la de crear una base de datos en la que se guarda
 
 
 <p align="left">
-  <img height="500" src="./images/vista_general.png" />
+  <img height="450" src="./images/vista_general.png" />
 </p>
 
 ## Descripcion de cada vinculo en pantalla
