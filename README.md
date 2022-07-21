@@ -21,10 +21,10 @@ El reto para este proyecto fue la de crear una base de datos en la que se guarda
 Junto con el input, recibe texto alfanumerico, permitiendole al usuario escribir lo que guste, pero solo al dar click en el boton se mostrará en pantalla el resultado. Si es satisfactiro se visualizará la carta del Pokémon buscado, de lo contrario se mostrará un mensaje de resultado no hallado junto con una imagen, para tener exito en la busqueda, se debe escribir exactamente el nombre del Pokémon o el numero de su pokedex entre 1 - 898, solo los Pokémon creados por el usuario tendran un numero de pokedex superior al rango anterior.
 </p> 
 <span align="left">
-  <img height="450" src="./images/busqueda.png" />
+  <img height="350" src="./images/busqueda.png" />
 </span>
 <span align="left">
-  <img height="450" src="./images/busqueda_error.png" />
+  <img height="350" src="./images/busqueda_error.png" />
 </span>
 
 - Ordenar Por: <p>
