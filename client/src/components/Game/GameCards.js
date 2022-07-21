@@ -91,7 +91,7 @@ console.log(prop)
     return (
         <div className={s.general}>
             <div className={s.contenedor}>{resultado}</div>
-            <button onClick={() => prop.getPokemonGame(6)}> iniciar juego </button>
+            <button onClick={() => {prop.getPokemonGame(6); setOpendCard([]); setGuia1("x");setGuia2("y") }}> iniciar juego </button>
             {
                 win === true ? 
                 <div className={s.ganar}> Ganaste 
