@@ -1,7 +1,7 @@
 # Single Page Aplication Pokemon
 
 <p align="left">
-  <img height="150" src="./pikachu.png" />
+  <img height="150" src="./images/pikachu.png" />
 </p>
 
 ## Descripcion
@@ -12,7 +12,7 @@ El reto para este proyecto fue la de crear una base de datos en la que se guarda
 
 
 <p align="left">
-  <img height="500" src="./vista_general.png" />
+  <img height="500" src="./images/vista_general.png" />
 </p>
 
 ## Descripcion de cada vinculo en pantalla
@@ -21,10 +21,10 @@ El reto para este proyecto fue la de crear una base de datos en la que se guarda
 Junto con el input, recibe texto alfanumerico, permitiendole al usuario escribir lo que guste, pero solo al dar click en el boton se mostrará en pantalla el resultado. Si es satisfactiro se visualizará la carta del Pokémon buscado, de lo contrario se mostrará un mensaje de resultado no hallado junto con una imagen, para tener exito en la busqueda, se debe escribir exactamente el nombre del Pokémon o el numero de su pokedex entre 1 - 898, solo los Pokémon creados por el usuario tendran un numero de pokedex superior al rango anterior.
 </p> 
 <span align="left">
-  <img height="450" src="./busqueda.png" />
+  <img height="450" src="./images/busqueda.png" />
 </span>
 <span align="left">
-  <img height="450" src="./busqueda_error.png" />
+  <img height="450" src="./images/busqueda_error.png" />
 </span>
 
 - Ordenar Por: <p>
@@ -38,7 +38,7 @@ Permite organizar todas las cartas cargadas en dirente orden, entre:
 </p>
 
 <p align="left">
-  <img height="200" src="./ordenar.png" />
+  <img height="200" src="./images/ordenar.png" />
 </p>
 
 - Filtrar Por: <p>
@@ -46,17 +46,17 @@ Permite mostrar solo las cartas que se seleccionen en el filtro, ya sea por: Pok
 </p>
 
 <p align="left">
-  <img height="400" src="./filtrar.png" />
+  <img height="400" src="./images/filtrar.png" />
 </p>
 
 - Crear Pokémon <p>
 En esta sección, el usuario crea su Pokémon dándole las características que desee, entre rangos preestablecidos. Se trata de un formulario controlado en el que cada input es controlado en donde se informa si la información es valida para cada campo. Adicionalmente se muestra una vista previa de como va quedando la carta. Y finalmente al presionar el botón “Crear Pokémon”, mostrara un mensaje de creación correcta.
 </p>
 <span align="left">
-  <img height="450" src="./crear.png" />
+  <img height="450" src="./images/crear.png" />
 </span>
 <span align="left">
-  <img height="150" src="./crear_correcto.png" />
+  <img height="150" src="./images/crear_correcto.png" />
 </span>
 
 
